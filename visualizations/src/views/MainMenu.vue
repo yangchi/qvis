@@ -4,6 +4,7 @@
         <b-row>
             <b-col cols="1" md="auto">qvis</b-col>
             <b-col>
+                <router-link to="/query">Connection Query</router-link> |
                 <router-link to="/files">Manage files</router-link> |
                 <router-link to="/sequence">Sequence</router-link> |
                 <router-link to="/congestion">Congestion</router-link>
@@ -15,6 +16,7 @@
             active-tab-class="font-weight-bold text-success"
             content-class="mt-3"
         >
+            <b-tab title="First" active><router-link to="/query">Connection Query</router-link></b-tab>
             <b-tab title="First" active><router-link to="/files">Manage files</router-link></b-tab>
             <b-tab title="Second"><b-link to="/sequence">Sequence</b-link></b-tab>
             <b-tab title="Disabled" disabled><p>I'm a disabled tab!</p></b-tab>
@@ -23,6 +25,9 @@
             <b-col cols="1" md="auto" class="align-middle"><h3 style="width: 290px;">qvis</h3></b-col>
             <b-col>
                 <b-nav tabs align="center">
+                    <b-nav-item to="/query" class="query-link" :active="this.$route.fullPath === '/query' || $route.fullPath === ''">
+                        Connection Query
+                    </b-nav-item>
                     <b-nav-item to="/files" class="files-link" :active="this.$route.fullPath === '/files' || $route.fullPath === ''">
                         Manage files
                     </b-nav-item>
@@ -38,8 +43,8 @@
                 </b-nav>
             </b-col>
             <b-col cols="1" md="auto">
-                <b-button variant="success" href="https://github.com/quiclog/qvis/issues/new?template=feature_request.md&amp;title=Feature+request" target="_blank" style="margin-right: 5px;">Request feature</b-button>
-                <b-button variant="danger"  href="https://github.com/quiclog/qvis/issues/new?template=bug-report-in-live-version.md&amp;title=Bug+in+live+version" target="_blank">Report issue</b-button>
+                <b-button variant="success" href="https://fb.workplace.com/groups/646964542156536/" target="_blank" style="margin-right: 5px;">Quic@FB Group</b-button>
+                <b-button variant="danger"  href="https://fb.workplace.com/groups/248214662741731/" target="_blank">Mvfst support group</b-button>
             </b-col>
         </b-row>
     </b-container>
@@ -74,6 +79,13 @@
     }
 
     /* using the bootstrapvue built-in "active-class" doesn't work due to precedence weirdness*/
+    #MainMenu li.query-link a.active {
+        color: black;
+        font-weight: bold;
+        background-color: #fff;
+        border-bottom-color: #fff;
+    }
+
     #MainMenu li.files-link a.active {
         color: black;
         font-weight: bold;

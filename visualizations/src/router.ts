@@ -2,6 +2,7 @@ import Vue from "vue";
 import Router from "vue-router";
 import MainMenu from "./views/MainMenu.vue";
 import VUEDebug from "./views/VUEDebug.vue";
+import QueryManager from "./views/QueryManager.vue";
 import FileManager from "./views/FileManager.vue";
 import SequenceDiagram from "./views/SequenceDiagram.vue";
 import CongestionGraph from "./views/CongestionGraph.vue";
@@ -13,13 +14,21 @@ const router = new Router({
     routes: [
         {
             path: "/",
-            redirect: "/files",
+            redirect: "/query",
         },
         {
             path: "/debug",
             name: "VUEDebug",
             components: {
                 default: VUEDebug,
+                menu: MainMenu,
+            },
+        },
+        {
+            path: "/query",
+            name: "QueryManager",
+            components: {
+                default: QueryManager,
                 menu: MainMenu,
             },
         },
